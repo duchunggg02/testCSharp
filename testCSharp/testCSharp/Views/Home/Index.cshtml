@@ -1,0 +1,24 @@
+﻿@model IEnumerable<string>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Home Page</title>
+</head>
+<body>
+    <h2>Submit Content</h2>
+    <form method="post" action="@Url.Action("AddContent")">
+        <input type="text" name="content" required />
+        <input type="submit" value="Submit" />
+    </form>
+
+    <h2>Saved Content</h2>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>@item</li>
+        }
+    </ul>
+</body>
+</html>
